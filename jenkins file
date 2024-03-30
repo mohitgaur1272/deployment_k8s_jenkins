@@ -1,0 +1,66 @@
+pipeline {
+    agent any
+    
+    environment {
+        // Define environment variables
+        AWS_ACCESS_KEY_ID = credentials('aws-access-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
+        AWS_DEFAULT_REGION = 'your-aws-region'
+        ECR_REPO_URL = 'your-ecr-repo-url'
+        DOCKER_IMAGE = 'your-docker-image'
+        DOCKER_IMAGE_VERSION = "${DOCKER_IMAGE}:${BUILD_NUMBER}" // Adding build number to the Docker image version
+        NAMESPACE = 'your-namespace'
+        SERVICE_NAME = 'your-service-name'
+        EXTERNAL_PORT = 80 // External port for the load balancer
+        INTERNAL_PORT = 8080 // Internal port your application listens on
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout your source code from version control system
+                git 'your-repository-url'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                // Build your Docker image
+                sh "docker build -t $DOCKER_IMAGE_VERSION ."
+            }
+        }
+        
+        stage('Push to ECR') {
+            steps {
+                // Authenticate with ECR
+                sh "aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $ECR_REPO_URL"
+                
+                // Push your Docker image to ECR
+                sh "docker tag $DOCKER_IMAGE_VERSION $ECR_REPO_URL/$DOCKER_IMAGE_VERSION"
+                sh "docker push $ECR_REPO_URL/$DOCKER_IMAGE_VERSION"
+                
+                // Delete the local Docker image
+                sh "docker rmi $DOCKER_IMAGE_VERSION"
+            }
+        }
+        
+        stage('Pull from ECR') {
+            steps {
+                // Pull the Docker image from ECR
+                sh "docker pull $ECR_REPO_URL/$DOCKER_IMAGE_VERSION"
+            }
+        }
+        
+        stage('Deploy to Kubernetes') {
+            steps {
+                // Deploy your application to Kubernetes cluster
+                script {
+                    sh "kubectl --kubeconfig=$KUBECONFIG --namespace=$NAMESPACE set image deployment/your-deployment-name your-container-name=$ECR_REPO_URL/$DOCKER_IMAGE_VERSION"
+                    
+                    // Create Load Balancer service
+                    sh "kubectl --kubeconfig=$KUBECONFIG --namespace=$NAMESPACE expose deployment/your-deployment-name --port=$EXTERNAL_PORT --target-port=$INTERNAL_PORT --type=LoadBalancer --name=$SERVICE_NAME"
+                }
+            }
+        }
+    }
+}
