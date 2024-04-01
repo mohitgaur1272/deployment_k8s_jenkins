@@ -6,7 +6,7 @@ pipeline {
         AWS_ACCESS_KEY_ID = credentials('aws-access-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
         AWS_DEFAULT_REGION = 'your-aws-region'
-        ECR_REPO_URL = 'your-ecr-repo-url' #<aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository_name> this is url pattern 
+        ECR_REPO_URL = 'your-ecr-repo-url' //<aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository_name> this is url pattern 
         DOCKER_IMAGE = 'your-docker-image'
         DOCKER_IMAGE_VERSION = "${DOCKER_IMAGE}:${BUILD_NUMBER}" // Adding build number to the Docker image version
         NAMESPACE = 'your-namespace'
