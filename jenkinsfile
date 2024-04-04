@@ -1,0 +1,56 @@
+pipeline {
+    agent any
+    
+    environment {
+        GITHUB_TOKEN = credentials('github-access-token')
+        AWS_ACCESS_KEY_ID = credentials('aws-access-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
+        AWS_DEFAULT_REGION = 'ap-south-1'
+        EKS_CLUSTER_NAME = 'w3cluster'
+        //GIT_REPO_URL = 'https://github.com/your/repo.git'
+    }
+    
+    stages {
+        stage('Clone Git Repository') {
+            steps {
+                // Clone the Git repository
+                 git branch: 'jenkins', url: 'https://github.com/mohitgaur1272/deployment_k8s_jenkins.git'
+            }
+        }
+        
+        stage('Deploy to EKS') {
+            steps {
+                // Use kubectl to apply the deployment YAML file
+                script {
+                    sh '''
+                        aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $EKS_CLUSTER_NAME
+                        kubectl apply -f deployment.yaml
+                        kubectl apply -f hpa.yaml
+                        kubectl apply -f loadbalncer.yaml
+                    '''
+                }
+            }
+        }
+        
+        stage('Test on EKS') {
+            steps {
+                // Run tests on your deployed application
+                script {
+                    // Example: curl your deployed application endpoint or run some other tests
+                    sh 'kubectl get all'
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            // This block is executed when the pipeline succeeds
+            echo 'Pipeline succeeded! Tests passed.'
+        }
+        failure {
+            // This block is executed when the pipeline fails
+            echo 'Pipeline failed! Tests might have failed.'
+        }
+    }
+}
