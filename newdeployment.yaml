@@ -1,0 +1,54 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: ekor-deployment
+spec:
+ selector:
+   matchLabels:
+     run: ekor-deployment
+ replicas: 1
+ template:
+   metadata:
+     labels:
+       run: ekor-deployment
+   spec:
+     containers:
+     - name: ekor-deployment
+       image: 579165099199.dkr.ecr.ap-south-1.amazonaws.com/lenovo:2 
+       ports:
+       - containerPort: 80
+       resources:
+         #limits:
+          # cpu: 500m
+         #requests:
+          # cpu: 200m
+---
+---         
+apiVersion: v1
+kind: Service
+metadata:
+  name: ekor-deployment-svc
+  labels:
+    run: ekor-deployment
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    run: ekor-deployment
+---   
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: ekor-hpa-deployment
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: ekor-deployment
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 5
+---
