@@ -15,7 +15,7 @@ spec:
    spec:
      containers:
      - name: ekor-deployment
-       image: 
+       image: $ECR_REPO_URL/$DOCKER_IMAGE_VERSION
        ports:
        - containerPort: 80
        resources:
