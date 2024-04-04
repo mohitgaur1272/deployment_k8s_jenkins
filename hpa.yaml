@@ -9,4 +9,9 @@ spec:
    name: hpa-demo-deployment
  minReplicas: 1
  maxReplicas: 10
- targetCPUUtilizationPercentage: 5
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 10
