@@ -10,11 +10,12 @@ pipeline {
         ECR_REPO_URL = '579165099199.dkr.ecr.ap-south-1.amazonaws.com' //<aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository_name> this is url pattern 
         DOCKER_IMAGE = 'lenovo'
         DOCKER_IMAGE_VERSION = "${DOCKER_IMAGE}:${BUILD_NUMBER}" // Adding build number to the Docker image version
-        NAMESPACE = 'newspace' 
+        NAMESPACE = 'default' 
         SERVICE_NAME = 'my-load-balancer'
+        EKS_CLUSTER_NAME = 'w3cluster'
         EXTERNAL_PORT = 80 // External port for the load balancer
         INTERNAL_PORT = 80 // Internal port your application listens on
-        KUBECONFIG = credentials('kubeconfig_file') // your Kubernetes configuration file
+        //KUBECONFIG = credentials('kubeconfig_file') // your Kubernetes configuration file
     }
     
     stages {
@@ -63,10 +64,12 @@ pipeline {
             steps {
                 // Deploy your application to Kubernetes cluster
                 script {
-                    sh "kubectl --kubeconfig=$KUBECONFIG --namespace=$NAMESPACE set image deployment/mohitdeployment projectcont=$ECR_REPO_URL/$DOCKER_IMAGE_VERSION"
+                    sh " aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $EKS_CLUSTER_NAME"
+                    sh "kubectl apply -f newdeployment.yaml --namespace=$NAMESPACE"
+                    sh "kubectl set image deployment/ekor-deployment ekor-deployment=$ECR_REPO_URL/$DOCKER_IMAGE_VERSION"
                     
                     // Create Load Balancer service
-                    sh "kubectl --kubeconfig=$KUBECONFIG --namespace=$NAMESPACE expose deployment/mohitdeployment --port=$EXTERNAL_PORT --target-port=$INTERNAL_PORT --type=LoadBalancer --name=$SERVICE_NAME"
+                    //sh "kubectl --namespace=$NAMESPACE expose deployment/mohitdeployment --port=$EXTERNAL_PORT --target-port=$INTERNAL_PORT --type=LoadBalancer --name=$SERVICE_NAME"
                 }
             }
         }
