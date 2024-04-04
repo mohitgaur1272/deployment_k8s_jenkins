@@ -17,8 +17,5 @@ spec:
        image: mohitgaur1272/signup
        ports:
        - containerPort: 80
-       resources:
-         limits:
-           cpu: 500m
-         requests:
-           cpu: 200m
+      
+       
