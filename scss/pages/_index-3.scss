@@ -1,0 +1,260 @@
+
+/* Silder One */
+.silder-three{
+	position: relative;
+	
+	.silder-content{
+		position: absolute;
+		left: 10%;
+		top: 50%;
+		width: 650px;
+		transform: translateY(-50%);
+		@include respond('wide-desktop'){
+			left: 15%;
+			top: 50%;
+			width: 500px;
+		}
+		@include respond('tab-port'){
+			left: 5%;
+		}
+		@include respond('phone'){
+			left:0;
+			width:100%;
+			padding:20px 40px 20px 20px;
+		}
+		p{
+			font-size:20px;
+			font-weight:400;
+			line-height:1.5;
+			color: #fff;
+			@include respond('wide-desktop'){
+				font-size:16px;
+			}
+			@include respond('phone'){
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+		}
+		.title{
+			font-size: 70px;
+			font-weight: 500;
+			line-height: 1.2;
+			margin-bottom: 25px;
+			font-family: $font-family-title;
+			color:#fff;
+			@include respond('wide-desktop'){
+				font-size:50px;
+			}
+			@include respond('phone'){
+				font-size: 30px;
+				margin-bottom: 15px;
+			}
+		}
+		.sub-title{
+			font-weight: 400;
+			margin-bottom: 30px;
+			font-family: $font-family-title;
+			letter-spacing: 4px;
+			@include respond('wide-desktop'){
+				margin-bottom: 10px;
+			}
+		}
+	}
+	
+	.silder-img{
+		overflow: hidden;
+		height: 100vh;
+		position: relative;
+		z-index: 0;
+		
+		&.overlay-black-middle:before {
+			opacity: 0.6;
+			background:#212529;
+			z-index:1;
+		}
+		img{
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+	.swiperThumbsHome {
+		width: 800px;
+		height: 140px;
+		background: #fff;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		@include respond('wide-desktop'){
+			width: 650px;
+		}
+		@include respond('tab-port'){
+			width: 50%;
+		}
+		@include respond('phone'){
+			height: auto;
+		}
+	}
+	.main-silder-swiper-03{
+		.swiper-pagination{
+			position: absolute;
+			right: 80px;
+			top: 50%;
+			transform: translateY(-50%);
+			display: inline-block;
+			left: auto;
+			bottom: auto;
+			width: 20px;
+			@include respond('tab-port'){
+				right: 40px;
+			}
+			@include respond('phone'){
+				right: 15px;
+			}
+			span{
+				background:#fff;
+				margin: 10px 5px;
+				&.swiper-pagination-bullet-active{
+					background:var(--primary);
+					transform:scale(2);
+					@include transitionMedium;	
+				}
+			}
+		}
+	}
+	.slider-one-pagination {
+		position: absolute;
+		bottom: 0;
+		right: 800px;
+		width:70px;
+		@include respond('wide-desktop'){
+			right: 650px;
+		}
+		@include respond('tab-port'){
+			right: 50%;
+		}
+		@include respond('phone'){
+			width:50px;
+		}
+		.btn-prev,
+		.btn-next{
+			width: 70px;
+			height: 70px;
+			display: block;
+			line-height: 70px;
+			text-align: center;
+			background: var(--primary);
+			color: #fff;
+			font-size: 20px;
+			margin: 0;
+			@include respond('phone'){
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				font-size: 15px;
+			}
+			@include transitionMedium;	
+						&:hover{
+				background:var(--primary-hover);
+			}
+			i{
+				color:inherit;
+				position:unset;
+				line-height: inherit;
+				font-size: inherit;
+			}
+		}
+	}
+	
+	.thumb-content {
+		padding: 25px 30px;
+		border-right: 1px solid rgba(0,0,0,0.1);
+		@include respond('wide-desktop'){
+			padding: 15px 20px;
+		}
+
+		.thumb-title{
+			font-size: 16px;
+			line-height: 1.4;
+			font-weight: 700;
+			margin: 0;
+			opacity:0.5;
+			@include transitionMedium;	
+		}
+		.number {
+			font-family: var(--font-family-title);
+			color: var(--title);
+			font-size: 20px;
+			font-weight: 700;
+			margin-bottom: 10px;
+			opacity:0.5;
+			@include transitionMedium;	
+		}
+	}
+	.swiper-slide-thumb-active{
+		.thumb-content {
+			.thumb-title{
+				opacity:1;
+			}
+			.number {
+				color:var(--primary);
+				opacity:1;
+			}
+		}
+	}
+}
+.scroll-down{
+	position: absolute;
+    color: #fff;
+    z-index: 1;
+    writing-mode: tb;
+    left: 80px;
+    bottom: 70px;
+    padding: 0 0px 50px 0px;
+    line-height: 1.5;
+	@include respond('tab-port'){
+		left: 20px;
+		bottom: 20px;
+	}
+	&:after{
+		content: "";
+		width: 8px;
+		height: 8px;
+		background: var(--primary);
+		position: absolute;
+		border-radius: 8px;
+		left: 50%;
+		margin-left: -4px;
+		bottom: 23px;
+		animation: passing 2s linear infinite;
+	}
+	&:before{
+		content: "";
+		width: 100%;
+		height: 38px;
+		border: 1px solid #fff;
+		position: absolute;
+		bottom: 0;
+		border-radius: 15px;
+	}
+}
+@keyframes passing {
+  0% {
+    bottom: 23px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 8px;
+    opacity: 0;
+  }
+}
+@keyframes passing-reverse {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}

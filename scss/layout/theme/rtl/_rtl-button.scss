@@ -1,0 +1,20 @@
+[dir='rtl']{
+	
+	.video-btn.style-1{
+
+		i{
+			margin-left: 15px;
+			margin-right: unset;
+		}
+		.text{
+			padding-left: 30px;
+			padding-right:unset;
+		}
+		&:before {
+			right: 0;
+			left:unset;
+		}
+		
+	}
+	
+}

@@ -1,0 +1,40 @@
+[dir='rtl']{
+	.ft-subscribe{
+		&.style-3 {
+			.input-group{
+				.form-control{
+					padding-left:12rem; 	
+					padding-right:35px; 	
+				}
+				.btn{
+					left: 10px;
+					right: unset;
+				}
+			}
+		}
+	}
+	.subscrible-bx{
+		&.style-1{
+			.dzSubscribe{
+				.input-group{
+					.btn{
+						&.style-1{
+							left:15px;
+							right: auto;
+						}
+						&.style-2{
+							left:10px;
+							right: auto;
+						}
+					}
+					.form-control{
+						padding:20px 35px 20px 12rem;
+						@include respond('phone'){
+							padding:10px 10px 10px 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

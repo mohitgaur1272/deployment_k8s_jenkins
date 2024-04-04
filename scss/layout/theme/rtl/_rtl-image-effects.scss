@@ -1,0 +1,11 @@
+[dir='rtl']{
+
+	.dz-img-effect {
+		// IMAGE SIDE PAN
+		&.side-pan:hover img {
+			margin-left: 0;
+			margin-right: -11%;
+		}	
+	}
+	
+}

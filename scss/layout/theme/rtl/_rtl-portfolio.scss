@@ -1,0 +1,84 @@
+[dir='rtl']{ 
+
+	//default
+	
+	//default
+	
+	//protfolio
+	
+	.dz-box.style-1{
+		.dz-info{
+			left: auto;
+			right: 0;
+		}
+		.sub-title{
+			float: left;
+		}
+		.title{
+			padding-right: 0;
+			padding-left : 20%;
+		}
+		.view-btn{
+			left: auto;
+			right: 30px;
+	
+			/* &:after{
+				left: auto;
+				right: 50%;
+			}	
+			&:before{
+				left: auto;
+				right: 50%;
+			} */
+		}
+	}
+
+	.dz-box.style-2{
+		.dz-info{
+			right: auto;
+			left: 0;
+			.line{
+				margin-right:  0;
+				margin-left: 15px
+			}
+		}
+		.dz-media{	
+			&:after{
+				left: auto;
+				right: 0;
+			}
+		} 
+		.view-btn{
+			left: auto;
+			right: 30px;
+			&:after{
+				left: 50%;
+				right: auto;
+			}	
+			&:before{
+				left: 50%;
+				right: auto;
+			}
+		}
+	}
+	
+	
+	.dz-box.style-3{
+		.view-btn{
+			right: 30px;	
+			&:after{
+				right: 21%;
+			}	
+			&:before{
+				right: 50%;
+				top: 50%;
+			}
+		}
+	}
+
+		
+		
+	
+	//protfolio
+
+}

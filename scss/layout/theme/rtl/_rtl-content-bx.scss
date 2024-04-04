@@ -1,0 +1,67 @@
+[dir='rtl']{ 
+
+	.dz-content-bx{
+		
+		&.style-1{
+			.dz-content-inner{
+				.content-media{
+					float: left;
+				}
+				.inner-content{
+					padding:30px 15px 0px 0;
+				}
+				@include respond('tab-port'){
+					.inner-content{
+						padding: 60px 15px 10px;
+					}
+				}
+				@include respond('phone-land'){
+					.inner-content{
+						padding: 50px 15px 0;
+					}
+				}
+			}
+		}
+		&.style-2{
+			.dz-content-inner{
+				.content-media{
+					float: left;
+					&.right{
+						float: right;
+					}
+				}
+			}
+		}
+		&.style-3{
+			.dz-content-inner{
+				padding-right: 0;
+				padding-left: 80px;
+			}
+			.counter-info{
+				left: auto;				
+				right: 0;				
+				.counter{
+					margin: 0 0 0 10px;
+					padding-right: 0;
+					padding-left: 10px;
+				}
+			}
+		}
+		&.style-4{
+			.content-media{
+				
+				&:after {
+					right: auto;
+					left: 10px;
+					text-align: left;
+				}
+			}
+			&:after{
+				left: auto;
+				right: 0;
+			}
+		}
+	}
+
+
+}

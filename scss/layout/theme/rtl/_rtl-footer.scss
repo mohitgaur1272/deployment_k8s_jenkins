@@ -1,0 +1,208 @@
+[dir='rtl']{ 
+
+	//default
+	footer{
+		.widget-logo ul{	
+			li{
+				padding: 0 0 15px 15px;	
+			}
+		}
+		.footer-title{
+			.dz-separator{
+				left: auto;
+				right: 0;
+			}
+		}
+		.widget-link{
+			li{
+				margin-left: 0;
+				margin-right: 20px;
+				@include respond('phone-land'){
+					margin-right: 8px;
+					margin-left: 7px;
+				}
+			}
+		}
+		.widget_services{
+			&.style-1{
+				ul{
+					li{
+						a{
+							padding: 5px 15px 5px 0;
+							&:before{
+								left: auto;
+								right: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+		.wp-block-latest-posts li, 
+		.wp-block-categories-list li, 
+		.wp-block-archives-list li, 
+		.widget_categories ul li, 
+		.widget_archive ul li, 
+		.widget_meta ul li, 
+		.widget_pages ul li, 
+		.widget_recent_comments ul li, 
+		.widget_nav_menu li, 
+		.widget_recent_entries ul li, 
+		.widget_services ul li{
+			left: auto;
+			right: 0;
+			&:hover{
+				left: auto;
+				right: 10px;
+			}
+		}
+	}
+
+	// footer-link
+	.footer-link{
+		li{
+			padding: 0 20px 0 25px;
+			&:before{
+				left: auto;
+				right: 0;
+			}
+		}
+	}
+
+	// widget_time
+	.widget_time{
+		ul{
+			li{
+				label{
+					margin-right: 0;
+					margin-left: 3px;
+				}
+			}
+		}
+	}
+	//default
+
+	// ft-clients
+	.ft-clients-area{
+		&:before{
+			left: auto;
+			right: 0;
+		}
+	}
+	.site-footer{
+		&.style-1{
+			.footer-bottom{
+				ul{
+					li{
+						&:last-child{
+							padding-left: 0;
+						}
+					}
+				}
+			}
+		}
+		
+		&.style-2{
+			.widget_getintuch ul li{
+				i{
+					text-align: right;
+					}
+			}
+			.widget_links{
+				ul li{
+					&:hover{
+						&:before{
+							margin-right: 0;
+							margin-left: 8px;
+						}
+					}
+				}
+			}
+			.circle-bg{
+				left: auto;
+				right: -7%;
+			}
+			.circle-bg-2{
+				right: auto;
+				left: -2%;
+			}
+		}
+		&.style-3{
+			.widget_getintuch ul li{
+				svg{
+					margin-left:10px;
+				}
+			}
+			.footer-top{
+				.widget{
+					.widget-title{
+						.title{
+							&:after{
+								right:0;
+							}
+						}
+					}
+					.dzSubscribe{
+						.input-group{
+							.form-control {
+								padding:10px 20px 10px 120px;	
+						
+
+							}
+							.btn {
+								left:8px;
+								right:unset;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.style-4{
+			.widget_getintuch ul li{
+				svg{
+					margin-left:10px;
+				}
+			}
+			.footer-top{
+				.widget{
+					.widget-title{
+						.title{
+							&:after{
+								right:0;
+							}
+						}
+					}
+					.dzSubscribe{
+						.input-group{
+							.form-control {
+								padding:10px 20px 10px 120px;	
+						
+
+							}
+							.btn {
+								left:8px;
+								right:unset;
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+
+
+
+		
+	}
+	// ft subscribe
+	.ft-subscribe{
+		button{
+			margin: 15px -100px 15px 0 !important;
+		}
+	}
+	// ft-clients
+
+}

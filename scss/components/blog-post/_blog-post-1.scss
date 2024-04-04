@@ -1,0 +1,276 @@
+.dz-card{
+	&.style-1{
+		box-shadow: 3px 3px 15px 0 rgba(0,0,0,0.15);
+		background: #fff;
+			
+		.dz-meta{
+			ul{
+				line-height: 1;
+				li{
+					color:var(--primary);
+					font-family:var(--font-family-title);
+					font-size:13px;
+					padding-left:15px;
+					letter-spacing:2px;
+					text-transform: uppercase;
+					position:relative;
+					font-weight: 300;
+						
+					&:after{
+						content:"";
+						height:5px;
+						width:5px;
+						background:var(--primary);
+						position:absolute;
+						left:0;
+						top:4px;
+					}
+				}	
+			}	
+		}
+		.dz-info{
+			position:unset;	
+		}
+		.icon-btn{
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 45px;
+			height: 45px;
+			padding: 0 0 0 4px;
+			text-align: center;
+			justify-content: center;
+		}
+	}
+	
+	&.style-2{
+		.dz-media{
+			position:relative;
+		}
+		.dz-meta{
+			position:absolute;
+			padding: 20px 20px;
+			width:100%;
+			left:0;
+			top:0;
+			background:#212529;
+			ul{
+				line-height: 1;
+				li{
+					color:var(--primary);
+					font-family:var(--font-family-title);
+					font-size:13px;
+					padding-left:15px;
+					letter-spacing:2px;
+					text-transform: uppercase;
+					position:relative;
+					font-weight: 300;
+						
+					&:after{
+						content:"";
+						height:5px;
+						width:5px;
+						background:var(--primary);
+						position:absolute;
+						left:0;
+						top:4px;
+					}
+				}	
+			}	
+		}
+	}
+	
+	&.style-3{
+		display: flex;
+		background:#fff;
+		justify-content:center;
+		box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.15);
+		
+		.dz-media{
+			width: 220px;
+			min-width: 220px;
+			
+			img{
+				height: 100%;
+				object-fit: cover;
+				width: 100%;
+				@include respond('phone'){
+					height: 260px;
+				}
+			}
+			@include respond('phone-land'){
+				width: 180px;
+				min-width: 180px;
+			}
+			@include respond('phone'){
+				width: 100%;
+				min-width: 100%;
+			}
+		}
+		.dz-info{
+			padding: 30px;
+			position: relative;
+			
+			.dz-title{
+				margin-bottom:5px;
+			}
+			.text{
+				p{
+					font-size:14px;
+					font-weight:500;
+					margin-bottom:0;
+				}
+			}
+			.dz-meta{
+				ul{
+					display:flex;
+					align-items:center;
+					.post-btn{
+						a{
+						padding:5px 10px;
+						margin:0;
+						font-size:12px;
+						font-weight:500;
+						}
+					}
+					li{
+						margin-right:15px;
+						span{
+							i{
+								margin-right:5px;
+								
+							}
+						}
+						@include respond('tab-land'){
+							margin-right: 10px;
+							font-size: 14px;
+						}
+						&:nth-child(3) {
+							margin-right:0;
+						}
+					}	
+				}
+			}
+			.icon-btn {
+				position:absolute;
+				bottom:0;
+				right:0;
+				padding:15px 10px; 
+				
+				i{
+					font-size:25px;
+				}
+
+				&:hover{
+					i{
+						animation:upToRight 0.5s forwards;
+					}
+				}
+				@include respond('phone'){
+					padding:10px 5px; 
+				}
+			}
+			@include respond('tab-land'){
+				padding: 25px;
+			}
+		}
+		@include respond('phone'){
+			display:block;
+		}
+	}
+
+	&.style-4{
+		.dz-title{
+			font-size: 20px;
+			font-weight: 500;
+			font-family: 'Oswald';
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+		.dz-media{
+			position:relative;
+				&:after{
+					content:'';
+					position:absolute;
+					bottom:0;
+					left:0;
+					width:100%;
+					height:86px;
+					background: linear-gradient(180deg, rgba(51, 51, 51, 0) 0%, #333333 100%);
+					z-index:0;
+				}
+			
+			.dz-meta{
+				position:absolute;
+				bottom:0px;
+				left:20px;
+				z-index:1;
+				ul{
+					align-items:center;
+					li{
+						color:#fff;
+						font-family: 'Montserrat';
+						font-weight: 500;
+						font-size: 13px;
+
+						span{
+							i{
+							margin-right:5px;
+							}
+						}
+					}
+					
+					.post-btn{
+						a{
+							padding:5px 15px;
+						}
+					}
+				}
+			}
+		}
+		.dz-info{
+			padding:15px 0;
+			display:flex;
+			align-items:center;
+			.text{
+				p{
+				margin:0;
+				padding-right:10px;
+				}
+			}
+			.btn {
+				padding: 0px 15px;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+
+			}
+			
+		}
+	
+	}
+	
+}
+.post-swiper{
+	.prev-post-swiper-btn,
+	.next-post-swiper-btn{
+		position:absolute;
+		top:50%;
+		width:45px;
+		height:45px;
+		line-height:45px;
+		text-align:center;
+		background:var(--primary);
+		color:#fff;
+		font-size:18px;
+		transform:translateY(-50%);
+		z-index:1;
+		
+	}
+	.prev-post-swiper-btn{
+		left:0;
+	}
+	.next-post-swiper-btn{
+		right:0;
+	}
+}

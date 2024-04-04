@@ -1,0 +1,174 @@
+[dir='rtl']{ 
+	
+	//default 
+	// ICON BOXES
+
+	// ICON SIZE
+
+	// PLACE ICON WITH BOX
+	.icon-bx-wraper {
+		&.left{
+			.icon-bx-xl,
+			.icon-bx-lg,
+			.icon-bx-md,
+			.icon-bx-sm,
+			.icon-bx-xs{
+				float: right;
+				margin-right: 0;
+				margin-left: 20px;
+			}
+			.icon-xl,
+			.icon-lg,
+			.icon-md,
+			.icon-sm,
+			.icon-xs{
+				float: right;
+				margin-right: 0;
+				margin-left: 10px;
+			}
+		}
+		&.right{
+			text-align: left;
+			.icon-bx-xl,
+			.icon-bx-lg,
+			.icon-bx-md,
+			.icon-bx-sm,
+			.icon-bx-xs{
+				float: left;
+				margin-left: 0;
+				margin-right: 20px;
+			}
+			.icon-xl,
+			.icon-lg,
+			.icon-md,
+			.icon-sm,
+			.icon-xs{
+				float: left;
+				margin-left: 0;
+				margin-right: 10px;
+			}
+		}
+		&.bx-style-2 {
+			&.center{
+				[class*="icon-bx-"] {
+					left: auto;
+					right: 50%;
+				}
+				.icon-bx-xl {
+					margin-left: 0;
+					margin-right: -75px;
+				}
+				.icon-bx-lg {
+					margin-left: 0;
+					margin-right: -60px;
+				}
+				.icon-bx-md {
+					margin-left: 0;
+					margin-right: -50px;
+				}
+				.icon-bx-sm {
+					margin-left: 0;
+					margin-right: -40px;
+				}
+				.icon-bx-xs {
+					margin-left: 0;
+					margin-right: -20px;
+				}
+			}
+			&.left{
+				[class*="icon-bx-"] {
+					left: auto;
+					right: 0;
+				}
+			}
+			&.right{ 
+				[class*="icon-bx-"] {
+					right: auto;
+					left: 0;
+				}
+			}
+		}	
+	}
+
+	// BEFORE & AFTER FOR LINE CSS
+
+	.right-border:before {
+		right: auto;
+		left: 0;
+	}
+		
+	//default
+
+	//iconbox 
+	
+	.icon-bx-wraper{
+		// Style 1
+		&.style-1{
+			.sep-tl{
+				left: auto;
+				right: 30px;
+			}
+			.sep-br{
+				right: auto;
+				left: 30px;
+			}
+			.sep-tr{
+				right: auto;
+				left: 30px;
+			}
+			.sep-bl{
+				left: auto;
+				right: 30px;
+			}
+		}
+		
+		// Style 9
+		&.style-9{
+			&:after{
+				left: auto;
+				right: 0;
+			}
+			&:before{
+				left: auto;
+				right: 0;
+			}
+		}
+		&.style-10{
+			&:after{
+				right:-3px;
+				border-right: 4px solid var(--primary);  
+				border-left: 0px;  
+				border-top: 4px solid var(--primary);
+			}
+			&:before{
+				left:-3px;
+				right:unset;
+				border-left: 4px solid var(--primary);  
+				border-right: 0px;  
+				border-bottom: 4px solid var(--primary);
+			}
+		}
+		
+	}
+	.flip-bx{
+		.inner{
+			left: auto;
+			right: 0;
+		}
+		.back{
+			left: auto;
+			right: 0;
+		}
+		.front{
+			&:after{
+				left:auto;
+				right: 0;
+			}
+		}
+	}
+	
+	//iconbox 
+	
+	
+
+}

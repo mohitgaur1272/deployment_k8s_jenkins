@@ -1,0 +1,323 @@
+// dz-bnr-inr
+.dz-bnr-inr{
+	background:$light;
+    height: 400px;
+    background-size: cover;
+	background-position: center;
+	position: relative;
+    overflow: hidden;
+	width: 100%;
+		
+	@include respond('tab-port'){
+		height: 300px;
+	}
+	@include respond('phone'){
+		height: 230px;
+	}
+	.container{
+		display: table;
+		height: 100%;
+		
+	}
+	.dz-bnr-inr-entry{
+	    height: 400px;
+		vertical-align: middle;
+		display: table-cell;
+		@include respond('tab-port'){
+			height: 300px;
+		}		
+		@include respond('phone-land'){
+			text-align:center;
+			.breadcrumb-row{
+				display:inline-block;
+			}
+		}	
+		@include respond('phone'){
+			height: 230px;
+		}	
+	}
+	h1 {
+		font-weight: 700;
+		font-size: 50px;
+		margin-bottom: 10px;
+		text-transform: capitalize;
+		@include respond('tab-port'){
+			font-size: 42px!important;
+		}
+		@include respond('phone-land'){
+			font-size: 28px!important;
+			letter-spacing: 2px;
+		}
+	}
+	
+	// height sm
+	&.dz-bnr-inr-lg{
+		height: 575px;
+		.dz-bnr-inr-entry{
+			height: 575px;
+		}
+		@include respond('tab-port'){
+			height: 400px;
+			.dz-bnr-inr-entry{
+				height: 400px;
+			}
+		}
+		@include respond('phone-land'){
+			height: 350px;
+			.dz-bnr-inr-entry{
+				height: 350px;
+			}
+		}
+		@include respond('phone'){
+			height: 300px;
+			.dz-bnr-inr-entry{
+				height: 300px;
+			}
+		}
+	}
+	
+	// height sm
+	&.dz-bnr-inr-sm{
+		height: 300px;
+		.dz-bnr-inr-entry{
+			height: 300px;
+		}
+	}
+}
+.breadcrumb-row{
+	ul {
+		background:transparent;
+		padding: 0;
+		
+		li {
+			padding: 0;
+			margin-right: 3px;
+			display: inline-block;
+			font-size: 15px;
+			font-weight: 600;
+			color: $white;
+			&.active{
+				color: $white;			
+			}
+			a{
+				color: $white;
+			}
+		}
+		.breadcrumb-item + .breadcrumb-item::before{
+			content: "|";
+			color: $white;
+			font-weight: 700;
+			font-size: 15px;
+			padding-right: 10px;
+		}
+	}
+}
+
+// dz-bnr-inr styles
+.dz-bnr-inr{
+	// Style 1
+	&.style-1{
+		&.overlay-white-dark{
+			&:before{
+				opacity: 1;
+				/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.5+0,1+100 */
+				background: -moz-linear-gradient(top,  rgba(255,255,255,0.3) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top,  rgba(255,255,255,0.3) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom,  rgba(255,255,255,0.3) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+			}
+		}
+		.breadcrumb-row{
+			display: inline-table;
+			ul{
+				margin: 0;
+				justify-content: center;
+				li{
+					position: relative;
+					color: $secondary;
+					text-transform: capitalize;
+					font-size: 18px;
+					font-weight: 500;
+					padding-left: 25px;
+					padding-right: 25px;
+					margin: 0;
+					@include respond('phone-land'){
+						padding-left: 15px;
+						padding-right: 15px;
+						font-size: 16px;
+					}
+					a{
+						color: $secondary;
+					}
+					&::before{
+						content: "";
+						height: 8px;
+						width: 8px;
+						background-color: var(--primary);
+						padding: 0;
+						position: absolute;
+						top: 50%;
+						left: -4px;
+						transform: translateY(-50%);
+					}
+					&:first-child{
+						&::before{
+							content: none;
+						}
+					}
+					}
+			}
+		}
+		h1{
+			margin-bottom: 25px;
+			font-family: $font-family-title;
+			letter-spacing: 8px;
+			font-weight: 500;
+		}
+		.dz-bnr-inr-entry {
+			text-align: center;
+		}
+		@include respond('tab-port'){
+			.dz-media{
+				display: none;
+			}
+			.dz-bnr-inr-entry {
+				padding-top: 0;
+			}
+		}
+		@include respond('phone-land'){
+			h1{
+				margin-bottom: 10px;
+			}
+		}
+	}
+	
+	// Style 2
+	&.style-2{
+		overflow: unset;
+		margin-bottom: 25px;
+		.dz-bnr-inr-entry{
+			padding-top: 0;
+			text-align: center;
+		}
+		h1{
+			font-size: 80px;
+		}
+		p{
+			width: 600px;
+			margin: auto;
+		}
+		&:after{
+			content: "";
+			background-image: url(../images/banner/pattern1.png);
+			background-size: cover;
+			z-index: 0;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		.breadcrumb-row{
+			position: absolute;
+			left: 50%;
+			bottom: -25px;
+			transform: translateX(-50%);
+			display: inline-table;
+			padding: 0 15px;
+			ul{
+				margin: 0;
+				background-color: var(--primary);
+				padding: 15px 30px;
+				box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+				border-bottom: 3px solid;
+				border-color: $headings-color!important;
+				border-radius: 0;
+			}
+		}
+		@include respond('phone-land'){
+			p{
+				width: 100%;
+			}
+		}
+	}
+	
+	// Style 3
+	&.style-3{
+		&:after{
+			content: "";
+			background-image: url(../images/banner/pattern2.png);
+			background-position: center 35%;
+			background-size: cover;
+			z-index: 0;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		.dz-bnr-inr-entry{
+			padding-top: 0;
+			text-align: center;
+		}
+		h1{
+			font-size: 80px;
+		}
+		.breadcrumb-row{
+			ul{
+				justify-content: center;
+				margin-bottom: 0;
+				li{
+					&:last-child{
+						color: var(--primary);
+					}
+				}
+			}
+		}
+	}
+}
+.square-bx{
+	position: absolute;
+    width: 170px;
+    height: 130px;
+    top: 50%;
+    transform: translate(-25%, -50%);
+    right: 25%;
+    z-index: -1;
+	&:before,
+	&:after{
+		content: "";
+		position: absolute;
+		background-color: var(--primary);
+		border-radius: 10px;
+	}
+	&:before{
+		height: 95px;
+		width: 95px;
+		left: 0;
+		top: 0;
+	}
+	&:after{
+		height: 55px;
+		width: 55px;
+		right: 0;
+		bottom: 0;
+	}
+	@include respond('tab-port'){
+		width: 100px;
+		height: 80px;
+		top: 40%;
+		transform: translate(-25%, -40%);
+		&:before{
+			height: 60px;
+			width: 60px;
+		}
+		&:after{
+			height: 30px;
+			width: 30px;
+		}
+	}
+	@include respond('phone'){
+		display: none;
+	}
+}

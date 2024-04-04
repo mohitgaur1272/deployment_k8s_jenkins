@@ -1,0 +1,41 @@
+[dir='rtl']{ 
+	
+	// dz-accordion
+	.dz-accordion{
+		.accordion-header{
+			.accordion-button{
+				padding: 22px 30px 22px 65px;
+				
+				.toggle-close{
+					right: auto;
+					left: 5px;
+					&:after{
+						left: auto;
+						right: 0;
+					}
+				}
+			}
+			@include respond('phone'){
+				.accordion-header{
+					.accordion-button{
+						padding: 15px 15px 15px 65px;
+					}
+				}
+			}
+		}
+		&.accordion-sm{
+			.accordion-header{
+				.accordion-button{
+					padding: 15px 20px 15px 55px;
+				}
+				@include respond('phone'){
+					.accordion-header{
+						.accordion-button{
+							padding: 15px 15px 15px 65px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

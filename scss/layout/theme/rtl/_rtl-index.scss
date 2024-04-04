@@ -1,0 +1,145 @@
+[dir='rtl']{ 
+
+	
+	/* Silder One */
+	.silder-one{
+		.silder-content{
+			left: auto;
+			right: 0;
+		}
+		.slider-one-pagination{
+			right: auto;
+			left: 80px;
+		}
+		@include respond('phone-land'){
+			.slider-one-pagination {
+				right: auto;
+				left: 0;
+			}
+		}
+		@include respond('phone'){
+			.silder-content {
+				left: 15px;
+				right: 15px;
+			}
+		}
+	}
+	.follow-info{
+		right: auto;
+		left: 0;
+		
+		&.left {
+			left: auto;
+			right: 0;
+		}
+	}
+
+	// line sap
+
+	.sep-tr{
+		&:before{
+			right: auto;
+			left: 10px;
+		}
+		&:after{
+			left: auto;
+			right: 0;
+		}
+	}
+	.sep-bl{
+		&:before{
+			left: auto;
+			right: 20px;
+		}
+		&:after{
+			left: auto;
+			right: 10px;
+		}
+	}
+
+	// Features Wraper
+	.features-wraper-1{
+		& > div:not(:last-child){
+			.icon-bx-wraper:after{
+				right: auto;
+				left: -50%;
+			}
+		}
+	}
+
+	.dz-media-1{
+		padding: 0 0 50px 50px;
+		&:after{
+			right: 30px;
+			left: 0;
+		}
+		@include respond('phone'){
+			padding: 0 0 30px 30px;
+			&:after{
+				left: auto;
+				right: 20px;
+			}
+		}
+	}
+
+	// Services Sidebar List
+	.ext-sidebar-menu{
+		ul{
+			li{
+				&.active,
+				&:hover{
+					padding-left: 0;
+					padding-right: 40px;
+				}
+			}
+		}
+	}
+
+	.section-title{
+		&.style-2{
+			&:after{
+				right: auto;
+				left: 100px;
+			}
+		}
+		
+		@include respond ('tab-land'){
+			&.style-2{
+				&:after{
+					right: 0;
+					left: 0;
+				}
+			}
+		}
+	}
+
+	.sep-tl:before {
+		left: auto;
+		right: 10px;
+	}
+	.sep-br:before {
+		right: auto;
+		left: 10px;
+	}
+
+	/* Support and Buy Button */
+	.theme-btn{
+		left: auto;
+		right: 10px;
+	}
+	.at-expanding-share-button[data-position=bottom-left] {
+		bottom: 10px;
+		left: auto;
+		right: 10px;
+	}
+	.theme-btn:hover span{
+		padding-left: 0;
+		padding-right: 10px;
+	}
+	/* Support and Buy Button END */
+	
+	.lg-outer {
+		direction: ltr;
+	}
+
+}

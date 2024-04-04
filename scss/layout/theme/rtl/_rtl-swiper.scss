@@ -1,0 +1,26 @@
+[dir='rtl']{
+	
+	.btn-next{
+		i{
+			right: auto;
+			left: -20px;
+			transform: rotate(180deg);
+		}
+		&:hover i{
+			right: auto;
+			left:-30px;
+		}
+	} 
+	.btn-prev{
+		i{
+			left: auto;	
+			right: -20px;	
+			transform: rotate(180deg);
+		}
+		&:hover i{
+			left: auto;
+			right: -30px;
+		}
+	}
+	
+}

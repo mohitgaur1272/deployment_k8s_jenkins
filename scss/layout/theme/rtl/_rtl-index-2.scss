@@ -1,0 +1,84 @@
+[dir='rtl']{
+	
+	.client-logo-wrapper{
+		.clients-logo{
+			border-left: 1px solid #a8a8a8;
+			border-right: none;
+			&:nth-child(5),
+			&:nth-child(10){
+				border-left: 0;
+			}
+		}
+		@include respond ('phone'){
+			.clients-logo{
+				&:nth-child(5),
+				&:nth-child(10){
+					border-left:1px solid #a8a8a8;
+				}
+				&:nth-child(even){
+					border-left:0;
+				}
+			}
+		}
+	}
+
+	.social-list{
+		&.style-2{
+			li {
+				a{
+					margin-right: 0;
+					margin-left: 8px;
+					&:after {
+						left: 50%;
+					}
+				}
+				&:last-child{
+					a{
+						margin-left:0;
+					}
+				}
+			}
+		}
+	} 
+
+	//silder-two
+	.silder-two{
+		padding-left: 0;
+		padding-right: 100px;
+		.silder-content{
+			margin-right: 0;
+			margin-left: -55px;
+			padding-right: 80px;
+			padding-left: 100px;
+		}
+		@include respond ('tab-land'){
+			.silder-content{
+				padding-left: 80px;
+				padding-right: 40px;
+			}
+		}
+		@include respond ('tab-port'){
+			padding-right:0;
+			.btn{
+				&.m-r30{
+					margin-right: 0;
+					margin-left: 15px;
+				}
+			}
+		}
+		@include respond ('phone-land'){
+			.silder-content {
+				padding: 30px 15px;
+			}
+		}
+	}
+	
+	.ft-subscribe{
+		&.style-2{
+			button{
+				margin: 0 !important;
+			}
+		}
+	}
+	
+}

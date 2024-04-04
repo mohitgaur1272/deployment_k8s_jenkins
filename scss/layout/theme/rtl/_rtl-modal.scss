@@ -1,0 +1,16 @@
+[dir='rtl']{
+	
+	// Modal Box
+
+	.inquiry-modal{
+		.btn-close {
+			right: auto;
+			left: -40px;
+			@include respond('phone-land'){
+				right: auto;
+				left: 0;
+			}
+		}
+	}
+	
+}

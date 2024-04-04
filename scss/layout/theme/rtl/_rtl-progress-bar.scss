@@ -1,0 +1,19 @@
+[dir='rtl']{
+	
+	// Progress Bar
+	.progress-bx{
+		// Style 3
+		&.style-3{
+			.progress{
+				.progress-bar{
+					.progress-value{
+						right: auto;
+						left: 0;
+					}
+				}
+			}
+		}
+	}
+	
+}
+

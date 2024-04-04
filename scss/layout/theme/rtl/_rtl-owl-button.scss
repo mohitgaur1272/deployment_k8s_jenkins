@@ -1,0 +1,116 @@
+[dir='rtl']{
+	
+	.owl-theme{
+		&.owl-dots-2{
+			.owl-dots {
+				left: auto;
+				right: unset;
+			}
+		}
+		&.owl-dots-3{
+			.owl-dots {
+				right: unset;
+				left: auto;
+			}
+		}
+	}
+	
+	// OWL BUTTON TOP TO LEFT
+	.owl-btn-top-l .owl-nav {
+		text-align: right;
+		
+		.owl-prev {
+			margin-right: 0;
+		}
+	}
+	
+	// OWL BUTTON TOP TO RIGHT
+	.owl-btn-top-r .owl-nav {
+		right: auto;
+		left: 0;
+		margin: 0;
+
+		.owl-next {
+			margin-right: 0;
+		}
+	}
+	
+	// OWL BUTTON TOP TO LEFT & RIGHT
+	.owl-btn-top-lr .owl-nav{
+		text-align: right;
+		.owl-next {
+			margin-left: 0;
+			float: left;
+		}
+	}
+	
+	// OWL BUTTON < > CENTER TO LEFT & RIGHT
+	.owl-btn-center-lr{
+		.owl-prev,
+		.owl-next{
+			left: auto;
+			right: 0;
+		}
+		.owl-prev {
+			left: auto;
+			right: -110px;
+		}
+		.owl-next {
+			left: -110px;
+			right: auto;
+		}
+		@include respond('laptop'){
+			.owl-prev{
+				left: auto;
+				right: -40px;
+			}
+			.owl-next{
+				right: auto;
+				left: -40px;
+			}
+		}
+		@include respond('tab-land'){
+			.owl-prev{
+				left: auto;
+				right: -20px;
+			}
+			.owl-next{
+				right: auto;
+				left: -20px;
+			}
+		}
+	}
+	
+	// OWL BUTTON STYLE
+	.owl-btn-1{
+		.owl-nav{
+			button{
+				&.owl-prev{
+					padding: 0 0 0 30px!important;
+					&:before{
+						right: auto;
+						left: 0;
+					}
+				} 
+				&.owl-next{
+					&:before{
+						left: auto;
+						right: 0;
+					}
+				}
+			}
+		}
+	}
+	
+	
+	/* owl num count */
+	.owl-num-count{
+		.owl-dots{
+			text-align: left;
+			counter-reset:li;
+			justify-content: center;
+			display: flex;
+		}
+	}
+	
+}

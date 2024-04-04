@@ -1,0 +1,417 @@
+[dir='rtl']{
+	
+	// Header Logo
+	.logo-header {
+		float: right;
+	}
+	
+	// Top Bar
+	.top-bar {
+		.dz-topbar-left {
+			float: right;
+			li{
+				padding-right: 0;
+				padding-left: 20px;
+			}
+		}
+		.dz-topbar-right {
+			float: left;
+			li{
+				padding-left: 0;
+				padding-right: 15px;
+			}
+		}
+		
+		.dz-topbar-center,
+		.dz-topbar-left,
+		.dz-topbar-right {
+			.dz-social-icon{
+				li{
+					padding-right: 0;
+				}
+			}
+		}
+	}
+
+	// Quik Search
+	.dz-quik-search{
+		left: auto;
+		right: 0;
+		
+		.form-control {
+			padding: 15px 15px 15px 60px;
+		}
+		span{
+			right:auto;
+			left:15px;
+		}
+	}
+
+	// Site Header
+	.site-header {
+		.extra-nav {
+			float: left;
+			margin-left: 0;
+			margin-right: 20px;
+			
+			#quik-search-btn{
+				margin-left: 0px;
+			}
+		}
+		&.style-1 {
+			.extra-cell {
+				.login-btn {
+					i {
+						margin-right: 0;
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	// Navbar Toggler
+	.navbar-toggler {
+		margin: 40px 15px 39px 0;
+		float: left;
+
+		@include respond('tab-port'){
+			margin: 20px 15px 20px 0;
+		}
+		@include respond('phone'){
+			margin: 20px 15px 20px 0;
+		}
+	}
+
+	// Navicon
+	.navicon{
+		
+		span{
+			left: auto;
+			right: 10px;
+		}
+		&.open span:nth-child(2) {
+			left: auto;
+			right: -60px;
+		}
+	}
+
+	// Header Nav
+	.header-nav {
+		@include respond('tab-port'){
+			left: auto;
+			right: -280px;
+		}
+		&.show {
+			@include respond('tab-port'){
+				left: auto;
+				right: -1px;
+			}
+		}
+		.nav{
+			float: left;
+			&>li {
+				&.sub-menu-down{
+					&>a {
+						&:after{
+							margin-right: auto;
+							margin-left: 5px;
+								
+							@include respond('tab-port'){
+								content: "\f053";
+								right: auto;
+								left: 0;
+								float: left;
+								margin: 0;
+							}
+						}
+						@include respond('tab-port'){
+							padding: 8px 0;
+						}
+					}
+					@include respond('tab-port'){
+						&.open{
+							&>a {
+								&:after{
+									content:"\f078";
+									background: #333;
+								}
+							}
+						}
+					}
+				}
+				.mega-menu,
+				.sub-menu {
+					left: auto;
+					right: 0;
+					text-align: right;
+					@include respond('tab-port'){	
+						& > li > a i{
+							right: auto;
+							left: 0;
+						}
+					}
+					li {
+						a {
+							&:after {
+								left: auto;
+								left: auto;
+								right: 20px;
+							}
+							
+							@include respond('tab-port'){
+								padding: 2px 16px 1px 0;
+								
+								&:after{
+									left: auto;
+									right: 0;
+								}
+							}
+						}
+						&:hover > a{
+							padding: 10px 35px 10px 20px;
+						}
+					}
+					li>.sub-menu {
+						left: auto;
+						right: 220px;
+					}
+					@include respond('tab-port'){
+						.mega-menu,
+						.sub-menu{
+							padding-left: 0;
+							padding-right: 20px;
+						}
+					}
+				}
+				.sub-menu{
+					li > a > i {
+						float: left;
+					}				
+				}
+				.mega-menu {
+					right: auto;
+					left: 0px;
+					&>li {
+						&>a {
+							&>i{
+								margin-right: 0;
+								margin-left: 5px;
+							}
+						}
+						&:after {
+							right: auto;
+							left: 0px;
+						}
+						li i{
+							margin-right: 0;
+							margin-left: 5px;
+						}
+						
+					}
+				}
+			}
+			@include respond('laptop'){
+				&>li:nth-last-child(3),
+				&>li:nth-last-child(2),
+				&>li:last-child{
+					.sub-menu .sub-menu{
+						left: auto;
+						right: -220px;
+					}
+				}
+			}
+			@include custommq($max: 1199px) {
+				&>li:last-child{
+					.sub-menu{
+						right: auto;
+						left: 0;
+					}
+				}
+			}
+			@include respond('tab-port'){
+				float: unset;
+			}
+		}
+		
+	}
+
+	// Header Transparent{
+	.header-transparent{
+		left:auto;
+		right:0;
+	}
+
+	// Is Fixed
+	.is-fixed{
+		.main-bar {
+			left: auto;
+			right: 0;
+		}
+	}
+
+	// Mobile Nav
+	@include respond('tab-port'){
+		.mo-left{
+			.header-nav{
+				left:auto;
+				right:-280px;
+				
+				&.show {
+					left: auto;
+					right: -1px;
+				}
+			}	
+			.navbar-toggler{
+				&.open{
+					&:after {
+						left: -20px;
+						right: 0;
+						transform-origin: top left;
+						margin: 0 20px 0px 0px;
+					}
+				}
+			}
+		}
+	}
+	
+	// site-header
+	.site-header{
+		&.style-1{
+			.extra-cell{
+				.login-btn{
+					margin-left: 0;
+					margin-right: 30px;
+					
+					@include respond('wide-desktop'){		
+						margin-left: 0;
+						margin-right: 20px;
+					}
+				}
+			}
+			.header-nav{
+				.nav{
+					& > li{ 
+						&> a{
+							@include respond('tab-port-min'){
+								&:after{
+									right:auto;
+									left:-2px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.style-2{
+			.menu-btn{
+				left: auto;
+				right: 0;
+				span{
+					left:auto;
+					right:36px;
+				}
+			}
+			.extra-nav{
+				.extra-cell{
+					margin-right: 0;
+					margin-left: 30px;
+					.login-btn {
+						i{
+							margin-right:0;
+							margin-left:10px;
+						}
+					}
+					@include respond ('tab-port'){
+						margin-left:0;
+					}
+				}
+			}
+			.logo-header{
+				margin-left:0;
+				margin-right:100px;
+				@include respond ('tab-land'){
+					margin-left:0;
+					margin-right:120px;
+				}
+				@include respond ('tab-port'){
+					margin-right:0;
+				}
+			}
+		}
+		&.center{
+			.logo-header {
+				@include respond('tab-port'){	
+					text-align: right;
+				}
+			}
+			.header-nav .nav {
+				float: right;
+				&.navbar-left {
+					text-align: left;
+					margin-left:100px;
+					margin-right:0;
+					@include respond('tab-port'){
+						text-align: right;
+						margin-left:0;
+					}
+				}
+				&.navbar-right {
+					float: left;
+					margin-left:0;
+					margin-right:100px;
+					@include respond('tab-port'){
+						margin-right:0;
+						float: unset;
+					}
+				}
+			}
+		}
+	}
+	.menu-btn{
+		margin-right: 0;
+		margin-left: 55px;
+		@include respond('wide-desktop'){	
+			margin-right: 0;
+			margin-left: 35px;
+		}
+		span{
+			left:auto;
+			right:10px;
+		}
+		&.open span:nth-child(2) {
+			left: auto;
+			right: -60px;
+		}
+	}
+	.sidebar-menu {
+		float: right;
+		margin-right: 0;
+		margin-left: 20px;
+	}
+	.contact-sidebar{
+		left: auto;
+		right:-300px;
+		&.active{
+			left:auto;
+			right:0;
+		}
+		.icon-bx-wraper{
+			.icon-md{
+				margin-right: 0;
+				margin-left: 15px;
+			}
+		}
+	}
+	.menu-close{
+		left: auto;
+		right: 0;
+	}
+	
+	@media only screen and (max-width: 1680px){
+		.site-header.style-1 .extra-cell .login-btn {
+			padding: 10px;
+		}
+	}
+}

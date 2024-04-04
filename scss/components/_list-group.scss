@@ -1,0 +1,69 @@
+.list-circle,
+.list-angle-double,
+.list-square{
+	li{
+		position: relative;
+		padding: 6px 5px 6px 15px;
+		&:before{
+			position: absolute;
+			left: 0;
+			top: 4px;
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+		}
+	}
+	&.primary{
+		li{
+			&:before{
+				color: var(--primary);
+			}
+		}
+	}
+}
+.list-angle-double{
+	li{
+		padding-left: 25px;
+	}
+}
+ul{
+	&.list-circle{
+		li{
+			&:before{
+				content: "\f111";
+				font-size: 8px;
+				font-weight: 900;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+	&.list-angle-double{				
+		li{
+			&:before{
+				content: "\f101";
+				font-size: 18px;
+			}
+		}
+	}
+	&.list-square{
+		li{
+			&:before{
+				content: "\f45c";
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+	&.grid-2{
+		display: flex;
+		flex-wrap: wrap;
+		li{
+			width: 50%;
+		}
+		@include respond('phone'){
+			li{
+				width: 100%;
+			}
+		}
+	}
+}

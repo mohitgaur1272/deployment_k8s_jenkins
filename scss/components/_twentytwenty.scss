@@ -1,0 +1,58 @@
+.twentytwenty-img-area {
+    position: relative;
+}
+.twentytwenty-wrapper{
+	width: 100%;
+    overflow: hidden;
+	.twentytwenty-overlay{
+		display:none;
+	}
+	.twentytwenty-container{
+		img {
+			width: 100%;
+		}
+	}
+	.twentytwenty-handle{
+		height: 90px;
+		width: 90px;
+		border: 0;
+		background-color: var(--primary);
+		transform: translate(-50%,-50%);
+		margin: 0;
+		
+		&:before,
+		&:after{
+			content: none;
+		}
+		.twentytwenty-left-arrow,
+		.twentytwenty-right-arrow{
+			border: 0;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: auto;
+			height: auto;
+			&:before{
+				content: "";
+				font-family: 'Line Awesome Free';
+				color: #fff;
+				font-weight: 900;
+				font-size: 24px;
+			}				
+		}
+		.twentytwenty-left-arrow{
+			left: 0;
+			margin: 0 0 0 18px;
+			&:before{
+				content: "\f104";
+			}
+		}
+		.twentytwenty-right-arrow{
+			right: 0;
+			margin: 0 18px 0 0;
+			&:before{
+				content: "\f105";
+			}
+		}
+	}
+}

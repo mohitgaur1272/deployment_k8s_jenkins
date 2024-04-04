@@ -1,0 +1,136 @@
+
+/* Silder One */
+.silder-for{
+	position: relative;
+	
+	.silder-content{
+		position: absolute;
+		left: 10%;
+		top: 50%;
+		width: 800px;
+		transform: translateY(-50%);
+		@include respond('wide-desktop'){
+			left: 10%;
+			top: 50%;
+			width: 500px;
+		}
+		@include respond('tab-port'){
+			left: 5%;
+		}
+		@include respond('phone'){
+			left:0;
+			width:100%;
+			padding:20px 40px 20px 20px;
+		}
+		p{
+			font-size:30px;
+			font-weight:200;
+			line-height:1.3;
+			
+			color: #fff;
+			@include respond('wide-desktop'){
+				font-size:20px;
+			}
+			@include respond('phone'){
+				font-size: 18px;
+				margin-bottom: 10px;
+			}
+		}
+		.title{
+			font-size: 120px;
+			font-weight: 500;
+			line-height: 1.1;
+			margin-bottom: 25px;
+			font-family: $font-family-base;
+			color:#fff;
+			
+			strong{
+				color:inherit;	
+				font-weight: 800;
+			}
+			span{
+				font-weight:300;	
+			}
+			
+			@include respond('wide-desktop'){
+				font-size:80px;
+			}
+			@include respond('phone'){
+				font-size: 45px;
+				margin-bottom: 15px;
+			}
+			.extext{
+				font-family: 'Lora', serif;
+				font-style: italic;
+				font-weight: 400;
+			}
+		}
+		.sub-title{
+			font-weight: 400;
+			margin-bottom: 30px;
+			font-family: $font-family-base;
+			letter-spacing: 4px;
+			@include respond('wide-desktop'){
+				margin-bottom: 10px;
+			}
+		}
+	}
+	
+	.silder-img{
+		overflow: hidden;
+		height: calc(100vh - 100px);
+		position: relative;
+		z-index: 0;
+		@include respond('tab-port'){
+			height: calc(100vh - 85px);
+		}
+		&.overlay-black-middle:before {
+			background: linear-gradient(to right, rgba(33, 37, 41, 0.8) 0%, rgba(33, 37, 41, 0) 100%);
+			z-index: 1;
+			width: 80%;
+			opacity: 1;
+		}
+		img{
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+	
+	.main-silder-swiper-04{
+		.swiper-pagination{
+			position: absolute;
+			display: block;
+			left: 0;
+			bottom: 10px;
+			
+			span{
+				background: #fff;
+				margin: 10px 5px;
+				width: 60px;
+				border-radius: 0;
+				opacity: 0.5;
+				height: 5px;
+				
+				@include transitionMedium;	
+				@include respond('tab-port'){
+					height: 3px;
+					width: 35px;
+				}
+				&.swiper-pagination-bullet-active{
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+#video-background {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}

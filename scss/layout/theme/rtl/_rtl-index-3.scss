@@ -1,0 +1,84 @@
+[dir='rtl']{
+	
+	
+	/* Silder One */
+	.silder-three{
+	
+		.silder-content{
+			left: auto;
+			right: 10%;
+			@include respond('wide-desktop'){
+				left: auto;
+				right: 15%;
+			}
+			@include respond('tab-port'){
+				left: auto;
+				right: 5%;
+			}
+			@include respond('phone'){
+				left: auto;
+				right: 0;
+				padding:20px 20px 20px 40px;
+			}
+		}
+		
+		.swiperThumbsHome {
+			right: auto;
+			left: 0;
+		}
+		.main-silder-swiper-03{
+			.swiper-pagination{
+				left: 80px;
+				right: auto;
+				@include respond('tab-port'){
+					right: auto;
+					left: 40px;
+				}
+				@include respond('phone'){
+					right: auto;
+					left: 15px;
+				}
+			}
+		}
+		.slider-one-pagination {
+			right: auto;
+			left: 800px;
+			@include respond('wide-desktop'){
+				right: auto;
+				left: 650px;
+			}
+			@include respond('tab-port'){
+				right: auto;
+				left: 50%;
+			}
+		}
+		
+		.thumb-content {
+			border-left: 1px solid rgba(0,0,0,0.1);
+		}
+	}
+	.scroll-down{
+		left: auto;
+		right: 80px;
+		@include respond('tab-port'){
+			left: auto;
+			right: 20px;
+		}
+		&:after{
+			left: auto;
+			right: 50%;
+			margin-left: 0;
+			margin-right: -4px;
+		}
+	}
+	
+	.sep-tl:before {
+		left: auto;
+		right: 10px;
+	}
+	.sep-br:before {
+		right: auto;
+		left: 10px;
+	}
+	
+}

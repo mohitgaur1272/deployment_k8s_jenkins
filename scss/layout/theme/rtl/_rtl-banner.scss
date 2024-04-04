@@ -1,0 +1,74 @@
+[dir='rtl']{   
+
+	//default
+	
+	// dz-bnr-inr
+	
+	.breadcrumb-row{
+		ul {
+			li {
+				margin-right: 0;
+				margin-left: 3px;
+			}
+			.breadcrumb-item + .breadcrumb-item::before{
+				padding-right: 0;
+				padding-left: 10px;
+			}
+		}
+	}
+
+	// dz-bnr-inr styles
+	.dz-bnr-inr{
+		// Style 1
+		&.style-1{
+			.breadcrumb-row{
+				ul{
+					li{
+						&::before{
+							left: auto;
+							right: -4px;
+						}	
+					}
+				}
+			}
+		}
+		
+		// Style 2
+		&.style-2{
+			&:after{
+				left: auto;
+				right: 0;
+			}
+			.breadcrumb-row{
+				left: auto;
+				right: 50%;
+			}
+		}
+		
+		// Style 3
+		&.style-3{
+			&:after{
+				left: auto;
+				right: 0;
+			}
+		}
+	}
+	.square-bx{
+		right: auto;
+		left: 25%;
+		&:before{
+			left: auto;
+			right: 0;
+		}
+		&:after{
+			right: auto;
+			left: 0;
+		}
+	}
+	
+	
+	
+	
+	//default
+	
+}

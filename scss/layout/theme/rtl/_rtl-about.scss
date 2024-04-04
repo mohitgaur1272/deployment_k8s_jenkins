@@ -1,0 +1,116 @@
+[dir='rtl']{
+	
+	//default
+		
+	//default
+	
+	//about
+	.about-bx1{
+		.dz-media{
+			.img1{		
+				margin-left: 0;
+				left: auto;
+				right: 0;
+			}
+			.img2{
+				margin-left: 0;
+				margin-right: 200px;
+				&:after{
+					right: auto;
+					left: 60px;
+				}
+			}
+		}
+		.year-exp{
+			.year{
+				margin: 0 0 0 20px;
+			}
+		}
+		@include respond('tab-port'){
+			.dz-media{
+				.img2 {
+					margin-left: 0;
+					margin-right: 250px;
+				}
+			}
+		}
+		@include respond('phone-land'){
+			.dz-media{
+				.img2 {
+					margin-left: 0;
+					margin-right: 200px;
+				}
+			}
+		}
+		@include respond('phone'){
+			.dz-media{
+				.img2 {
+					margin-left: 0;
+					margin-right: 100px;
+					&:after {
+						right: auto;
+						left: 30px;
+					}
+				}
+			}
+		}
+	}
+
+	.about-bx2{
+		.dz-media{
+			padding-right: 0;
+			padding-left: 15px;
+			&:after{
+				right: auto;
+				left: 80px;
+			}
+			&.right{
+				padding-left: 0;
+				padding-right: 15px;
+				&:after{
+					left: auto;
+					right: 80px;
+				}
+				.circle-bg{
+					right: auto;
+					left: -25%;
+				}
+				@include respond ('phone'){ 
+					padding-left: 0;
+					padding-right: 0;
+				}
+			}
+			.circle-bg{
+				left: auto;
+				right: -25%;
+			}
+		}
+		@include respond ('tab-port'){
+			.dz-media{
+				padding-left: 0;
+			}
+		}
+	}
+	
+	.about-bx3{
+		.dz-media{
+				padding-right:140px;
+				padding-left:0;
+				@include respond('tab-port'){
+					padding-right:20px;
+				}
+			.dz-info{
+				right: 20px;
+			}
+		}	
+	}
+	.about-bx5{
+		.dz-media{
+			margin-right:0;
+			margin-left:70px;
+		}	
+	}	
+	
+	//about
+
+}

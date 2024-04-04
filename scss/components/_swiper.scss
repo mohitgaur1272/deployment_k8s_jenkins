@@ -1,0 +1,46 @@
+.swiper-pagination,
+.btn-next, 
+.btn-prev{
+	position:relative;
+	top:auto;
+	left:auto;
+	right:auto;
+	bottom:auto;
+	width: auto;
+	height: auto;
+	color: #212529;
+	font-family:var(--font-family-title);
+	margin: auto;
+	font-size:15px;
+	letter-spacing:2px;
+	z-index: 1;
+	@include transitionMedium;
+	display: inline-block;
+	&:after{
+		content:none;	
+	}
+	i{
+		position:absolute;	
+		font-size: 40px;
+		top: -7px;
+		@include transitionMedium;
+		color:var(--primary);
+		z-index:-1;
+	}
+}
+.btn-next{
+	i{
+		right:-20px;
+	}
+	&:hover i{
+		right:-30px;
+	}
+} 
+.btn-prev{
+	i{
+		left:-20px;	
+	}
+	&:hover i{
+		left:-30px;
+	}
+}

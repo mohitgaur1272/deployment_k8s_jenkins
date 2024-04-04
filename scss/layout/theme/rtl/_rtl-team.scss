@@ -1,0 +1,69 @@
+[dir='rtl']{ 
+	
+	//default
+	
+	//default
+	
+	//team
+		.dz-team{
+	// Style 1
+		&.style-1{
+			.dz-media{
+		
+				.team-social{
+					right: auto;
+					left: -100px;	
+				}	
+				
+			}
+			&:hover .dz-media{
+				.team-social{
+					right: auto;	
+					left: 10px;	
+				}
+			}
+		}
+		
+		// Style 2
+		&.style-2{
+			.dz-position{
+				&.line{
+					&:before{
+						margin-right: -50px;
+						margin-left: 10px;
+					}
+				}
+			}
+			.dz-media{
+				.team-social{
+					left: 50%;
+					li{
+						margin-right: 0;
+						margin-left: 20px;
+					}	
+				}	
+				
+			}
+		}
+		
+		&.style-3{
+			&:after{
+				right:-3px;
+				border-right: 4px solid var(--primary);  
+				border-left: 0px;  
+				border-top: 4px solid var(--primary);
+			}
+			&:before{
+				left:-3px;
+				right:unset;
+				border-left: 4px solid var(--primary);  
+				border-right: 0px;  
+				border-bottom: 4px solid var(--primary);
+			}
+		}		
+			
+	}
+
+	//team
+
+} 

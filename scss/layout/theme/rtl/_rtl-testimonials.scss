@@ -1,0 +1,118 @@
+[dir='rtl']{ 
+	
+	//default
+	
+	// TESTIMONIALS
+	.quote-left{
+		&:before {
+			left: auto;
+			right: 0;
+		}
+	}
+	.quote-right{
+		&:before {
+			right: auto;
+			left: 0;
+		}
+	}
+	
+	//default
+	
+	//testimonial
+	
+	// Testimonial 1
+	.testimonial-1 {
+		&:after{
+			left: auto;
+			auto: 40px;
+		}
+		.sep-tl{
+			left: auto;
+			right: 0;
+		}
+		.sep-br{
+			right: auto;
+			left: 0;
+		}
+		.quote-left{
+			&:before {
+				left: auto;
+				right: 50%;
+			}
+		}
+		@include respond ('tab-land'){	
+			&:after {
+				left: auto;
+				right: 20px;
+			}
+		}
+	}
+
+	// Testimonial 2
+	.testimonial-2 {
+		&:after{
+			right: auto;
+			left: 40px;
+		}
+		@include respond ('phone'){
+			&:after{
+				right: auto;
+				left: 15px;
+			}
+		}
+	}
+
+	.testimonial-swiper-2{
+		.btn-prev{
+			margin-right: 0;
+			margin-left: 45px !important;
+		}
+		.btn-next i{
+			right: auto;
+			left: 3px;
+			transform: rotate(180deg);
+			&:hover {
+				left: -20px;
+			}
+		}
+		.btn-prev i{
+			left: auto;
+			right: 3px;
+			transform: rotate(180deg);
+			&:hover {
+				right: -20px;
+			}
+		}
+		
+	}
+	.testimonial-3 {
+		.testimonial-info {
+			display:flex;
+			position:relative;
+			background:#fff;
+			padding: 15px;
+				@include respond('phone'){
+					padding: 10px;
+					display:unset;
+					text-align:center;
+				}
+			&:after{
+				content: "";
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				width: 125px;
+				height: 125px;
+				background: var(--primary) ;
+				z-index:0;
+			}
+			svg {
+				left: 15px;
+				right: unset;
+			}
+		}
+	}
+		
+	//testimonial
+
+}

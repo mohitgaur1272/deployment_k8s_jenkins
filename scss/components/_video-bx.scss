@@ -1,0 +1,104 @@
+// video-bx
+.video-bx{
+	position: relative;
+	&.style-1{
+		.video-btn {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			.popup-youtube{
+				height: 100px;
+				width: 100px;
+				line-height: 100px;
+				text-align: center;
+				background-color: var(--primary);
+				display: block;
+				color: #fff;
+				font-size: 42px;
+				margin: 0 auto;
+				transition: all 0.5s;
+				box-shadow: 0 0 0 20px var(--rgba-primary-5);
+			}
+			@include respond('phone'){
+				.popup-youtube{
+					height: 70px;
+					width: 70px;
+					line-height: 70px;
+					font-size: 28px;
+					box-shadow: 0 0 0 15px var(--rgba-primary-5);
+				}
+			}
+		}
+	}
+	
+	&.style-2{
+		.video-btn {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			.popup-youtube{
+				height: 100px;
+				width: 100px;
+				line-height: 100px;
+				text-align: center;
+				border-radius: 100px;
+				background-color: $white;
+				display: block;
+				color: var(--primary);
+				font-size: 24px;
+				margin: 0 auto;
+				transition: all 0.5s;
+				box-shadow: 0 0 0 8px rgba(#fff,0.5);
+				
+				&:after{
+					content: "";
+					border: 1px solid $white;
+					border-radius: 50%;
+					height: 100%;
+					width: 100%;
+					position: absolute;
+					left: 0;
+					top: 0;
+					transform: scale(1.7);
+				}
+			}
+		}
+	}
+	
+	&.style-3{
+		display: inline-block;
+		.video-btn{
+			margin: 13px;
+			.popup-youtube{
+				display: inline-block;
+				color:$white;
+				height: 136px;
+				width: 136px;
+				line-height: 136px;
+				border-radius: 136px;
+				background-color:var(--primary);
+				text-align:center;
+				&:after{
+					content: "";
+					border: 1px solid var(--primary);
+					border-radius: 50%;
+					height: 100%;
+					width: 100%;
+					position: absolute;
+					left: 0;
+					top: 0;
+					transform: scale(1.2);
+				}
+				@include respond ('phone'){
+					height:90px;
+					width:90px;
+					line-height:90px;
+				}
+			}
+		}
+	}
+}

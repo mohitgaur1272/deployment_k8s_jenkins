@@ -1,0 +1,30 @@
+[dir='rtl']{
+	
+	// video-bx
+	.video-bx{
+		&.style-2{
+			.video-btn {
+				left: auto;
+				right: 50%;
+				.popup-youtube{
+					&:after{
+						left: auto;
+						right: 0;
+					}
+				}
+			}
+		}
+		
+		&.style-3{
+			.video-btn{
+				.popup-youtube{
+					&:after{
+						left: auto;
+						right: 0;
+					}
+				}
+			}
+		}
+	}
+	
+}
