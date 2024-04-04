@@ -15,7 +15,7 @@ spec:
    spec:
      containers:
      - name: ekor-deployment
-       image: 579165099199.dkr.ecr.ap-south-1.amazonaws.com/lenovo:2 
+       image: 
        ports:
        - containerPort: 80
        resources:
