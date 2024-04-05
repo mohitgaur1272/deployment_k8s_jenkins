@@ -59,19 +59,29 @@ pipeline {
                 sh "docker pull $ECR_REPO_URL/$DOCKER_IMAGE_VERSION"
             }
         }
-        
-        stage('Deploy to Kubernetes') {
+
+        stage('add kubeconfig to jenkins') {
             steps {
-                // Deploy your application to Kubernetes cluster
-                script {
+                // add kubeconfig file for jenkins
                     sh " aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $EKS_CLUSTER_NAME"
-                    sh "kubectl apply -f newdeployment.yaml --namespace=$NAMESPACE"
-                    sh "kubectl set image deployment/ekor-deployment ekor-deployment=$ECR_REPO_URL/$DOCKER_IMAGE_VERSION"
-                    
-                    // Create Load Balancer service
-                    //sh "kubectl --namespace=$NAMESPACE expose deployment/mohitdeployment --port=$EXTERNAL_PORT --target-port=$INTERNAL_PORT --type=LoadBalancer --name=$SERVICE_NAME"
                 }
             }
         }
+
+        stage('apply deployment file') {
+            steps {
+                // Deploy your application to Kubernetes cluster
+                     sh "kubectl apply -f newdeployment.yaml --namespace=$NAMESPACE"
+                }
+            }
+        }
+
+        stage('image set'){
+            steps {
+                //change image in deployment for container 
+                    sh "kubectl set image deployment/ekor-deployment ekor-deployment=$ECR_REPO_URL/$DOCKER_IMAGE_VERSION"
+                }
+            }
+        } 
     }
 }
