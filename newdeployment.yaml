@@ -7,7 +7,7 @@ spec:
  selector:
    matchLabels:
      run: ekor-deployment
- replicas: 5
+ replicas: 2
  template:
    metadata:
      labels:
