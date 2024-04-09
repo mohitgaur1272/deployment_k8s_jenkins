@@ -1,21 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: hpa-demo-deployment
+ name: ekor-deployment
 spec:
  selector:
    matchLabels:
-     run: hpa-demo-deployment
- replicas: 1
+     run: ekor-deployment
+ replicas: 2
  template:
    metadata:
      labels:
-       run: hpa-demo-deployment
+       run: ekor-deployment
    spec:
      containers:
-     - name: hpa-demo-deployment
-       image: mohitgaur1272/signup
+     - name: ekor-deployment
+       image: $ECR_REPO_URL/$DOCKER_IMAGE_VERSION
        ports:
        - containerPort: 80
-      
-       
+       resources:
+         #limits:
+          # cpu: 500m
+         #requests:
+          # cpu: 200m
