@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hpa-demo-deployment
+  name: ekor-deployment-svc
   labels:
-    run: hpa-demo-deployment
+    run: ekor-deployment
 spec:
   type: LoadBalancer
   ports:
   - port: 80
   selector:
-    run: hpa-demo-deployment
+    run: ekor-deployment
