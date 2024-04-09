@@ -71,7 +71,8 @@ pipeline {
         stage('apply deployment file') {
             steps {
                 // Deploy your application to Kubernetes cluster
-                     sh "kubectl apply -f newdeployment.yaml --namespace=$NAMESPACE"
+                     sh "kubectl apply -f deployment.yaml--namespace=$NAMESPACE"
+                // after then manually apply your other yaml file for one time 
                 }
             }
         }
