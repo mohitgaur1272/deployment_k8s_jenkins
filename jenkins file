@@ -56,7 +56,7 @@ pipeline {
         stage('Pull from ECR') {
             steps {
                 // Pull the Docker image from ECR
-                sh "docker pull $ECR_REPO_URL/$DOCKER_IMAGE_VERSION"
+                //sh "docker pull $ECR_REPO_URL/$DOCKER_IMAGE_VERSION"
             }
         }
 
