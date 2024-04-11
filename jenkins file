@@ -22,7 +22,7 @@ pipeline {
         stage('Clone') {
             steps {
                 // Clone your source code from version control system
-                git branch: 'jenkins', url: 'https://github.com/mohitgaur1272/deployment_k8s_jenkins.git'
+                checkout scmGit(branches: [[name: '*/jenkins']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mohitgaur1272/deployment_k8s_jenkins.git']])
             }
         }
         
